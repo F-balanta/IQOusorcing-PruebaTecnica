@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 mx-auto">
+
+    <h1 class="m-5">Actualizar Usuario</h1>
+    <div class="form-group">
+      <label for="txtnombre" class="form-label">Nombre</label>
+      <input id="txtnombre" class="form-control" type="text" [(ngModel)]="usuario.nombre" name="nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="txtUserName" class="form-label">Usuario</label>
+      <input id="txtUserName" class="form-control" type="text" [(ngModel)]="usuario.userName" name="userName">
+    </div>
+
+    <div class="form-group">
+      <label for="txtCorreo" class="form-label">Correo</label>
+      <input id="txtCorreo" class="form-control" type="text" [(ngModel)]="usuario.correo" name="correo">
+    </div>
+
+    <div class="form-group">
+      <label for="txtpassword" class="form-label">Contraseña</label>
+      <input id="txtpassword" class="form-control" type="password" [(ngModel)]="usuario.password" name="password">
+    </div>
+
+    <div class="d-inline-flex pt-3">
+      <button class="btn btn-success p-2"
+              (click)="updateDataUser(usuario.id,usuario)"
+      >Actualizar
+      </button>
+    </div>
+  </div>
+</div>

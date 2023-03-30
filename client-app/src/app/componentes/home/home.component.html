@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class="container mt-lg-5">
+  <h1 class="mt-2" style="text-align: center">Auditoría</h1>
+  <table class="table table-hover mt-lg-5" style="text-align: center">
+    <thead class="bg-dark-subtle">
+    <tr>
+      <th class="col-sm-3">Nombre de usuario</th>
+      <th class="col-sm-3">Fecha inicio de sesión</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of auditoria">
+      <td>{{item.usuario.userName}}</td>
+      <td>{{item.fechaInicioSesion}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

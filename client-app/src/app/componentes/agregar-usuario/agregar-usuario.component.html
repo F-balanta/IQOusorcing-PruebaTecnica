@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="container mt-lg-5">
+  <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 mx-auto">
+    <h2 class="m-5 text-center">{{titulo}}</h2>
+
+    <div class="form-group">
+      <label for="txtUsuario" class="form-label">Nombre</label>
+      <input id="txtUsuario" class="form-control" type="text" [(ngModel)]="usuario.nombre" name="nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="txtUsername" class="form-label">Usuario</label>
+      <input id="txtUsername" class="form-control" type="text" [(ngModel)]="usuario.userName" name="username">
+    </div>
+
+    <div class="form-group">
+      <label for="txtCorreo" class="form-label">Correo</label>
+      <input id="txtCorreo" class="form-control" type="text" [(ngModel)]="usuario.correo" name="correo">
+    </div>
+
+    <div class="form-group">
+      <label for="txtcontrasena" class="form-label">Contraseña</label>
+      <input id="txtcontrasena" class="form-control" type="password" [(ngModel)]="usuario.password" name="password">
+    </div>
+    <button class="btn btn-success mt-2" (click)="addUser(usuario)"> Guardar cambios</button>
+  </div>
+</div>
