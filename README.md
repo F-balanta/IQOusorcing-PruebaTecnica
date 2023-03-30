@@ -107,10 +107,7 @@ Esta capa implementa:
 
 # Como ejecutar el proyecto
 
- 1. Clonar el repositorio:
-    
-
-	`    https://github.com/F-balanta/IQOusorcing-PruebaTecnica.git`
+ 1. Clonar el repositorio: `https://github.com/F-balanta/IQOusorcing-PruebaTecnica.git`
 
  2. Ingresar al repositorio y abrir el archivo `appsettings.json` que se encuentra en la ruta `IQOUTSOURCING\IQOUTSOURCING.RestApi`
  3. Modificar el valor del parámetro `CadenaConexion` con la cadena de conexión correspondiente a tu base de datos local (Recuerda que el proyecto se ejecuta sobre SQL Server)
