@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UsuariosService} from "../../servicios/usuarios.service";
 import UsuarioForCreateorUpdateDTO from "../../modelos/Usuario/UsuarioForCreateorUpdateDTO";
 import {Router, ActivatedRoute} from "@angular/router";
@@ -69,9 +69,13 @@ export class ActualizarUsuarioComponent implements OnInit {
     if (this.validateform()) {
       this.apiService.updateUser(id, usuario).pipe(
         catchError(ex => {
-          const statusCode = ex.status;
           this.errorStatus = true;
-          this.toastr.error("Error: " + ex.error.message);
+          const statusCode = ex.status;
+          if (statusCode == 0) {
+            this.toastr.error("Error: Fue imposible comunicarse con el servidor");
+          } else {
+            this.toastr.error("Error: " + ex.error.message);
+          }
           return throwError(ex);
         })
       ).subscribe(response => {

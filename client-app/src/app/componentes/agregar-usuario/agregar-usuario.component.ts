@@ -25,7 +25,7 @@ export class AgregarUsuarioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  this.asignarTitulo()
+    this.asignarTitulo()
   }
 
   titulo: string = "";
@@ -56,7 +56,7 @@ export class AgregarUsuarioComponent implements OnInit {
   asignarTitulo(): void {
     if (localStorage.getItem("token")) {
       this.titulo = "Crear usuario"
-    } else{
+    } else {
       this.titulo = "Regístrate"
     }
   }
@@ -64,9 +64,15 @@ export class AgregarUsuarioComponent implements OnInit {
   addUser(usuario: UsuarioForCreateorUpdateDTO) {
     if (this.validateform()) {
       this.apiService.addUser(usuario).pipe(
-        catchError(error => {
-          this.errorMsj = error.error.message;
-          return throwError(error);
+        catchError(ex => {
+          this.errorMsj = ex.error.message;
+          const statusCode = ex.status;
+          if (statusCode == 0) {
+            this.toastr.error("Error: Fue imposible comunicarse con el servidor");
+          } else {
+            this.toastr.error("Error: " + ex.error.message);
+          }
+          return throwError(ex);
         })
       ).subscribe(response => {
         if (response != null) {

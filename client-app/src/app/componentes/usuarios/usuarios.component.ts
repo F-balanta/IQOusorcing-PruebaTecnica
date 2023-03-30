@@ -44,9 +44,14 @@ export class UsuariosComponent implements OnInit {
 
   deleteUser(id:number){
     this.usuarioService.deleteUser(id).pipe(
-      catchError(e => {
-        this.toastr.error(`Error: ${e.error.message}`)
-        return throwError(e);
+      catchError(ex => {
+        const statusCode = ex.status;
+        if(statusCode == 0){
+          this.toastr.error("Error: Fue imposible comunicarse con el servidor");
+        } else{
+          this.toastr.error("Error: " + ex.error.message);
+        }
+        return throwError(ex);
       })).subscribe(response=>{
         console.log(response);
         this.toastr.success(`${response.message}`)
