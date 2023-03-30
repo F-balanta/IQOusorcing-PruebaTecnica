@@ -30,9 +30,9 @@ builder.Services.AddCors(op =>
     op.AddPolicy("CorsPolicy", builder =>
     {
         builder
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowAnyOrigin();
+            .WithOrigins("http://localhost:4200")
+            .WithMethods("GET", "POST", "PUT", "DELETE")
+            .AllowAnyHeader();
     });
 });
 
