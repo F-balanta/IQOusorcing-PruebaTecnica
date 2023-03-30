@@ -40,7 +40,7 @@ Este repositorio contiene la resolución de la prueba técnica para la vacante d
 
 ## Arquitectura
 
-![enter image description here](https://cacoo.com/diagrams/qBBv0hYNnNzInaBu-09BE9.png)
+![Imgur](https://i.imgur.com/jwqfsto.jpg)
 
 Este proyecto implementa una arquitectura limpia
 
